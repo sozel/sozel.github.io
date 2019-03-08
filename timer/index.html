@@ -14,7 +14,8 @@
             height: 300px
         }
 
-        .center {
+        .center_block {
+            margin-top: 40px;
             text-align: center;
         }
 
@@ -30,11 +31,28 @@
         }
 
         .dropdown {
+            font: inherit;
+            color: gray;
+            border: 0;
             background-color: #FFFFFF;
             min-width: 160px;
-            font-size: 14px;
+            font-size: 28px;
         }
 
+        .btn {
+            font: inherit;
+            color: gray;
+            border: 1px solid silver;
+            background-color: inherit;
+            padding: 10px 40px;
+            font-size: 80px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #FFF8F5;
+        }
     </style>
 
 
@@ -46,10 +64,10 @@
         <div class="time_container">
             <p id="demo"></p>
         </div>
-        <div class="center">
-            <p id="text_button" onclick="reset()">Start</p>
+        <div class="center_block">
+            <button class="btn" onclick="reset()">Start</button>
         </div>
-        <div class="center">
+        <div class="center_block">
             <select class="dropdown" id="countdown_time_selector">
                 <option value="10000">10 secs</option>
                 <option value="300000">05 mins</option>
@@ -121,7 +139,6 @@
             recalculateTimes();
             x = setInterval(ticker, 200);
         }
-
     </script>
 
 
