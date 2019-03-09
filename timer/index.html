@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .container {
-            height: 800px;
         }
-
 
         .time_container {
             text-align: center;
-            height: 300px
         }
 
         .center_block {
@@ -26,8 +23,11 @@
         }
 
         p {
-            font-size: 200px;
             color: gray;
+        }
+        
+        #timer_text {
+            font-size: 12vw;
         }
 
         .dropdown {
@@ -35,8 +35,7 @@
             color: gray;
             border: 0;
             background-color: #FFFFFF;
-            min-width: 160px;
-            font-size: 28px;
+            font-size: 1.5vw;
         }
 
         .btn {
@@ -45,9 +44,8 @@
             border: 1px solid silver;
             background-color: inherit;
             padding: 10px 40px;
-            font-size: 80px;
-            cursor: pointer;
-            display: inline-block;
+            font-size: 4vw;
+
         }
 
         .btn:hover {
@@ -62,7 +60,7 @@
 
     <div class="container">
         <div class="time_container">
-            <p id="demo"></p>
+            <p id="timer_text">0h 0m 0s</p>
         </div>
         <div class="center_block">
             <button class="btn" onclick="reset()">Start</button>
@@ -127,12 +125,12 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Output the result in an element with id="demo"
-            document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("timer_text").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "¯\\_(ツ)_/¯";
+                document.getElementById("timer_text").innerHTML = "¯\\_(ツ)_/¯";
                 recalculateTimes();
                 beep();
                 x = setInterval(ticker, 200);
