@@ -127,13 +127,11 @@
             // Output the result in an element with id="demo"
             document.getElementById("timer_text").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
-            // If the count down is over, write some text
-            if (distance < 0) {
+            if (distance < 1) {
                 clearInterval(x);
-                document.getElementById("timer_text").innerHTML = "¯\\_(ツ)_/¯";
-                recalculateTimes();
                 beep();
-                x = setInterval(ticker, 200);
+                document.getElementById("timer_text").innerHTML = "0h 0m 0s";
+                reset();
             }
 
         };
